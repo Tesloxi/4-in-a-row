@@ -17,8 +17,8 @@ root = tk.Tk()
 screen_height = root.winfo_screenheight()
 screen_width = root.winfo_screenheight()
 
-HEIGHT = 800
-WIDTH = 600
+HEIGHT = screen_height * 80 // 100
+WIDTH = HEIGHT - 200
 
 win_x = screen_width // 2 - WIDTH // 2
 win_y = screen_height // 2 - HEIGHT // 2
@@ -62,6 +62,10 @@ def draw_grid(surface, background, red, yellow, grid):
         for j in range(len(grid[i])):
             if grid[i][j] in 'AE':
                 draw.circle(surface, background, (w//2+j*w, pt+w//2+i*w), w*42//100)
+            elif grid[i][j] == 'R':
+                draw.circle(surface, red, (w//2+j*w, pt+w//2+i*w), w*42//100)
+            elif grid[i][j] == 'Y':
+                draw.circle(surface, yellow, (w//2+j*w, pt+w//2+i*w), w*42//100)
 
 win.fill(BACKGROUND)
 grid_surface.fill(GRID)
