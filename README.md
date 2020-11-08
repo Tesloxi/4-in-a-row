@@ -1,2 +1,2 @@
-# 4-in-a-row
-4 in a row game using pygame
+# Connect 4
+Connect 4 game using pygame
